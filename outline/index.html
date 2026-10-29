@@ -3,475 +3,1810 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="藍天咖啡，為手沖咖啡愛好者挑選當季精品咖啡豆，讓每一杯都清澈、明亮、值得細品。">
-  <title>藍天咖啡｜讓風味，慢慢抵達</title>
+  <title>灰色麵包店 | Grey Bakery - 純粹手作 ‧ 頂級原料烘焙</title>
+  <meta name="description" content="灰色麵包店以高階麵粉、法國頂級天然奶油與純濃鮮乳，堅持24小時低溫發酵，為麵包愛好者呈獻純粹質樸的手作美味。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy: #062742;
-      --blue: #0c5b95;
-      --sky: #75c6e8;
-      --mist: #eaf5f7;
-      --cream: #fbfaf6;
-      --ink: #122534;
-      --muted: #607482;
-      --line: #d7e4e8;
-      --sand: #e5b66b;
-      --shadow: 0 18px 50px rgba(6, 39, 66, .13);
+      --bg-main: #f5f5f7;
+      --bg-card: #ffffff;
+      --bg-dark: #1e2124;
+      --bg-grey-subtle: #eaebee;
+      --text-primary: #212529;
+      --text-secondary: #5a626a;
+      --text-muted: #8c959f;
+      --grey-accent: #495057;
+      --grey-light: #ced4da;
+      --gold-warm: #c59b5f;
+      --gold-hover: #b0874c;
+      --border-color: #e2e5e8;
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+      --radius: 12px;
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      color: var(--ink);
-      background: var(--cream);
-      font-family: "Noto Sans TC", sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      line-height: 1.75;
       -webkit-font-smoothing: antialiased;
     }
 
-    a { color: inherit; text-decoration: none; }
-    button, input { font: inherit; }
-    button { cursor: pointer; }
-    .wrap { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
-    .serif { font-family: "Noto Serif TC", serif; }
-    .eyebrow {
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: min(1200px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .serif {
+      font-family: 'Noto Serif TC', serif;
+    }
+
+    .en-font {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 0.05em;
+    }
+
+    /* Header & Navigation */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 76px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-badge {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #343a40, #212529);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 20px;
+      box-shadow: 0 4px 10px rgba(33, 37, 41, 0.2);
+    }
+
+    .brand-text h1 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--text-primary);
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .brand-text span {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--grey-accent);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .cart-btn {
+      position: relative;
+      background: none;
+      border: 1px solid var(--border-color);
+      padding: 9px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-primary);
+      transition: var(--transition);
+    }
+
+    .cart-btn:hover {
+      border-color: var(--grey-accent);
+      background-color: var(--bg-grey-subtle);
+    }
+
+    .cart-badge {
+      background-color: var(--gold-warm);
+      color: #fff;
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .btn-primary {
+      background-color: var(--bg-dark);
+      color: #ffffff;
+      padding: 10px 22px;
+      border-radius: 24px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-primary:hover {
+      background-color: #343a40;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(30, 33, 36, 0.25);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1.5px solid var(--grey-accent);
+      padding: 10px 22px;
+      border-radius: 24px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+
+    .btn-outline:hover {
+      background: var(--grey-accent);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: var(--text-primary);
+      transition: var(--transition);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      padding: 90px 0 100px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #ffffff 0%, var(--bg-main) 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--bg-grey-subtle);
+      color: var(--grey-accent);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      margin-bottom: 22px;
+      border: 1px solid var(--border-color);
+    }
+
+    .hero-tag::before {
+      content: '●';
+      color: var(--gold-warm);
+      font-size: 10px;
+    }
+
+    .hero-title {
+      font-size: clamp(34px, 4.2vw, 54px);
+      line-height: 1.25;
+      font-weight: 900;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--grey-accent);
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-title em::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 4px;
+      width: 100%;
+      height: 8px;
+      background: rgba(197, 155, 95, 0.25);
+      z-index: -1;
+    }
+
+    .hero-description {
+      font-size: 17px;
+      color: var(--text-secondary);
+      margin-bottom: 36px;
+      max-width: 540px;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 45px;
+    }
+
+    .hero-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding-top: 30px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .highlight-item h4 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .highlight-item p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .hero-media {
+      position: relative;
+    }
+
+    .hero-image-wrapper {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      aspect-ratio: 4 / 4.6;
+    }
+
+    .hero-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.02);
+      transition: transform 0.8s ease;
+    }
+
+    .hero-image-wrapper:hover img {
+      transform: scale(1.06);
+    }
+
+    .hero-badge-float {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 18px 24px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      max-width: 260px;
+    }
+
+    .float-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: var(--bg-grey-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .float-text strong {
+      display: block;
+      font-size: 14px;
+      color: var(--text-primary);
+    }
+
+    .float-text span {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Section Global Header */
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 55px;
+    }
+
+    .section-sub {
+      color: var(--gold-warm);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 3.2vw, 38px);
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    /* Brand Style & Ingredients Section */
+    .ingredients-section {
+      padding: 95px 0;
+      background-color: #ffffff;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .ingredients-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .ingredient-card {
+      background-color: var(--bg-main);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ingredient-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--grey-light);
+    }
+
+    .card-thumb {
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .ingredient-card:hover .card-thumb img {
+      transform: scale(1.08);
+    }
+
+    .ingredient-label {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(30, 33, 36, 0.85);
+      color: #ffffff;
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.08em;
+      backdrop-filter: blur(4px);
+    }
+
+    .card-body {
+      padding: 28px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-body h3 {
+      font-size: 21px;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .card-body .origin {
+      font-size: 13px;
+      color: var(--gold-warm);
+      font-weight: 600;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .card-body p {
+      font-size: 14.5px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Product Section (Call to Action / Shopping) */
+    .products-section {
+      padding: 100px 0;
+    }
+
+    .category-filter {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 45px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background-color: #ffffff;
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background-color: var(--bg-dark);
+      color: #ffffff;
+      border-color: var(--bg-dark);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 28px;
+    }
+
+    .product-card {
+      background-color: var(--bg-card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--grey-accent);
+    }
+
+    .product-img-box {
+      height: 230px;
+      overflow: hidden;
+      position: relative;
+      background-color: var(--bg-grey-subtle);
+    }
+
+    .product-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .product-card:hover .product-img-box img {
+      transform: scale(1.06);
+    }
+
+    .product-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background-color: var(--gold-warm);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .product-content {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .product-content h4 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text-primary);
+    }
+
+    .product-features {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .product-features span {
+      background-color: var(--bg-main);
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid var(--border-color);
+    }
+
+    .product-desc {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 18px;
+      flex-1;
+    }
+
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .product-price {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .product-price small {
+      font-size: 13px;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-weight: normal;
+      color: var(--text-muted);
+      margin-left: 2px;
+    }
+
+    .add-to-cart-btn {
+      background-color: var(--bg-grey-subtle);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .add-to-cart-btn:hover {
+      background-color: var(--bg-dark);
+      color: #ffffff;
+      border-color: var(--bg-dark);
+    }
+
+    /* Baking Schedule (出爐時刻) */
+    .schedule-section {
+      padding: 90px 0;
+      background-color: #212529;
+      color: #ffffff;
+    }
+
+    .schedule-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 50px;
+    }
+
+    .schedule-header .section-title {
+      color: #ffffff;
+    }
+
+    .schedule-header .section-desc {
+      color: #adb5bd;
+    }
+
+    .schedule-timeline {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .timeline-card {
+      background-color: #2b3035;
+      padding: 30px;
+      border-radius: var(--radius);
+      border-left: 4px solid var(--gold-warm);
+      transition: var(--transition);
+    }
+
+    .timeline-card:hover {
+      background-color: #343a40;
+      transform: translateY(-4px);
+    }
+
+    .timeline-time {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--gold-warm);
+      margin-bottom: 8px;
       display: flex;
       align-items: center;
       gap: 10px;
-      margin: 0 0 13px;
-      color: var(--blue);
-      font-size: 11px;
+    }
+
+    .timeline-time span {
+      font-size: 13px;
+      color: #ced4da;
+      font-weight: 500;
+    }
+
+    .timeline-card h4 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .timeline-card ul {
+      list-style: none;
+      color: #adb5bd;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .timeline-card ul li::before {
+      content: '✔ ';
+      color: var(--gold-warm);
+    }
+
+    /* Promotional CTA Banner */
+    .promo-banner {
+      background: linear-gradient(135deg, #495057 0%, #212529 100%);
+      border-radius: 20px;
+      padding: 50px 60px;
+      margin: 80px 0;
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .promo-banner::after {
+      content: 'GREY';
+      position: absolute;
+      right: 20px;
+      bottom: -40px;
+      font-size: 140px;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.03);
+      font-family: 'Playfair Display', serif;
+      pointer-events: none;
+    }
+
+    .promo-text h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
       font-weight: 700;
-      letter-spacing: .18em;
     }
-    .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
-    .section-title {
-      margin: 0;
-      font: 700 clamp(30px, 4vw, 46px)/1.28 "Noto Serif TC", serif;
-      letter-spacing: .035em;
+
+    .promo-text p {
+      font-size: 16px;
+      color: #dee2e6;
+      max-width: 580px;
     }
-    .section-title em { color: var(--blue); font-style: normal; }
-    .section-copy { max-width: 48ch; margin: 20px 0 0; color: var(--muted); }
-    .button {
-      display: inline-flex;
+
+    .promo-btn {
+      background-color: var(--gold-warm);
+      color: #ffffff;
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .promo-btn:hover {
+      background-color: var(--gold-hover);
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgba(197, 155, 95, 0.4);
+    }
+
+    /* Customer Reviews */
+    .reviews-section {
+      padding: 90px 0;
+      background-color: #ffffff;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .review-card {
+      background-color: var(--bg-main);
+      padding: 32px 28px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+
+    .review-card:hover {
+      border-color: var(--grey-light);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-stars {
+      color: #f59e0b;
+      font-size: 15px;
+      margin-bottom: 16px;
+      letter-spacing: 2px;
+    }
+
+    .review-card blockquote {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .reviewer-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .reviewer-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: var(--grey-accent);
+      color: #ffffff;
+      display: flex;
       align-items: center;
       justify-content: center;
-      gap: 11px;
-      min-height: 50px;
-      padding: 12px 23px;
-      border: 1px solid transparent;
-      border-radius: 2px;
-      font-size: 14px;
       font-weight: 700;
-      letter-spacing: .04em;
-      transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
+      font-size: 15px;
     }
-    .button:hover { transform: translateY(-2px); }
-    .button:focus-visible, a:focus-visible { outline: 3px solid var(--sky); outline-offset: 4px; }
-    .button-primary { color: var(--navy); background: var(--sand); box-shadow: 0 9px 22px rgba(1, 35, 59, .2); }
-    .button-primary:hover { background: #f0c77f; }
-    .button-outline { color: #fff; border-color: rgba(255,255,255,.58); }
-    .button-outline:hover { background: rgba(255,255,255,.1); }
-    .arrow { font-size: 18px; line-height: 1; }
 
-    /* Header */
-    .site-header {
-      position: absolute;
-      z-index: 10;
-      width: 100%;
-      color: #fff;
-      border-bottom: 1px solid rgba(255, 255, 255, .16);
+    .reviewer-meta strong {
+      display: block;
+      font-size: 14px;
+      color: var(--text-primary);
     }
-    .nav { display: flex; align-items: center; justify-content: space-between; min-height: 78px; }
-    .brand { display: flex; align-items: center; gap: 12px; font: 700 20px/1 "Noto Serif TC", serif; letter-spacing: .11em; }
-    .brand-mark {
+
+    .reviewer-meta span {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Store Info Section */
+    .store-section {
+      padding: 90px 0;
+      background-color: var(--bg-main);
+    }
+
+    .store-grid {
       display: grid;
-      width: 29px;
-      height: 29px;
-      place-items: center;
-      border: 1px solid var(--sky);
-      border-radius: 50%;
-      color: var(--sky);
-      font: 700 19px/1 "Playfair Display", serif;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
     }
-    .brand small { display: block; margin-top: 5px; color: rgba(255,255,255,.64); font: 600 8px/1 sans-serif; letter-spacing: .21em; }
-    .nav-links { display: flex; align-items: center; gap: 29px; font-size: 13px; font-weight: 500; }
-    .nav-links a { position: relative; padding: 6px 0; }
-    .nav-links a:not(.nav-cta)::after { content: ""; position: absolute; right: 0; bottom: 0; left: 0; height: 1px; background: var(--sky); transform: scaleX(0); transform-origin: right; transition: transform .22s; }
-    .nav-links a:not(.nav-cta):hover::after { transform: scaleX(1); transform-origin: left; }
-    .nav-cta { padding: 8px 16px !important; border: 1px solid rgba(255,255,255,.55); }
-    .nav-cta:hover { color: var(--navy); background: #fff; }
-    .menu-toggle { display: none; border: 0; color: #fff; background: transparent; }
 
-    /* Hero */
-    .hero { position: relative; min-height: 704px; overflow: hidden; color: #fff; background: var(--navy); }
-    .hero::before {
-      content: "";
-      position: absolute;
+    .store-details {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .store-info-item {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .store-info-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      background-color: var(--bg-grey-subtle);
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .store-info-text h5 {
+      font-size: 16px;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .store-info-text p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .store-photo-card {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      aspect-ratio: 4 / 3;
+    }
+
+    .store-photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: #1a1c1e;
+      color: #9aa0a6;
+      padding: 70px 0 30px;
+      border-top: 1px solid #2d3136;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-brand h3 {
+      color: #ffffff;
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      line-height: 1.8;
+      max-width: 320px;
+    }
+
+    .footer-col h5 {
+      color: #ffffff;
+      font-size: 15px;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul a {
+      font-size: 14px;
+      color: #9aa0a6;
+    }
+
+    .footer-col ul a:hover {
+      color: #ffffff;
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 30px;
+      border-top: 1px solid #2d3136;
+      font-size: 13px;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: #212529;
+      color: #ffffff;
+      padding: 14px 22px;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 9999;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Modal for Order Inquiry */
+    .modal-overlay {
+      position: fixed;
       inset: 0;
-      opacity: .36;
-      background: radial-gradient(circle at 76% 45%, rgba(55, 167, 212, .75), transparent 23%), linear-gradient(117deg, rgba(4,25,45,.22) 0 48%, rgba(5,47,78,.82) 78%);
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      padding: 20px;
     }
-    .hero::after {
-      content: "";
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #ffffff;
+      width: min(500px, 100%);
+      border-radius: var(--radius);
+      padding: 32px;
+      position: relative;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .modal-close {
       position: absolute;
-      top: 0;
-      right: -180px;
-      width: 760px;
-      height: 760px;
-      border: 1px solid rgba(153,220,240,.22);
-      border-radius: 50%;
-      box-shadow: 0 0 0 62px rgba(153,220,240,.045), 0 0 0 180px rgba(153,220,240,.025);
-    }
-    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.02fr .98fr; gap: 45px; align-items: center; min-height: 704px; padding: 122px 0 72px; }
-    .hero .eyebrow { color: var(--sky); }
-    .hero-title { max-width: 13ch; margin: 0; font: 900 clamp(42px, 5.5vw, 68px)/1.22 "Noto Serif TC", serif; letter-spacing: .075em; }
-    .hero-title .blue { color: var(--sky); }
-    .hero-lede { max-width: 42ch; margin: 26px 0 32px; color: rgba(255,255,255,.78); font-size: 16px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; }
-    .hero-note { margin-top: 28px; color: rgba(255,255,255,.52); font-size: 11px; letter-spacing: .1em; }
-    .hero-art { position: relative; min-height: 453px; }
-    .sun { position: absolute; top: 2%; right: 14%; width: 166px; height: 166px; border-radius: 50%; background: #93d6e6; box-shadow: 0 0 65px rgba(145,215,233,.36); }
-    .mountain { position: absolute; right: -4%; bottom: 2%; width: 98%; height: 70%; clip-path: polygon(0 73%, 23% 42%, 37% 59%, 61% 10%, 73% 29%, 84% 0, 100% 37%, 100% 100%, 0 100%); background: linear-gradient(135deg, #0b7eac, #06446f 70%); opacity: .85; }
-    .mountain::after { content: ""; position: absolute; inset: 0; background: linear-gradient(155deg, transparent 38%, rgba(2,35,58,.72) 38.5% 100%); }
-    .coffee-vessel { position: absolute; z-index: 2; right: 17%; bottom: 0; width: 255px; filter: drop-shadow(0 22px 21px rgba(0,0,0,.23)); }
-    .dripper { position: relative; width: 205px; height: 132px; margin: 0 auto -5px; border: 4px solid #e9f8fa; border-top-width: 6px; border-radius: 10px 10px 44% 44%; background: linear-gradient(115deg, rgba(123,206,225,.5), rgba(26,118,161,.23)); clip-path: polygon(0 0,100% 0,78% 100%,22% 100%); }
-    .dripper::after { content: ""; position: absolute; inset: 18px 16px 0; border-top: 1px solid rgba(255,255,255,.6); border-left: 1px solid rgba(255,255,255,.25); transform: skewX(-17deg); }
-    .carafe { position: relative; width: 170px; height: 181px; margin: 0 auto; border: 4px solid #e9f8fa; border-radius: 9px 9px 39% 39% / 9px 9px 19% 19%; background: linear-gradient(90deg, rgba(110,211,229,.26), rgba(1,52,87,.52)); }
-    .carafe::before { content: ""; position: absolute; top: -16px; left: 27px; width: 108px; height: 20px; border: 4px solid #e9f8fa; border-bottom: 0; border-radius: 50% 50% 0 0; }
-    .carafe::after { content: ""; position: absolute; right: 16px; bottom: 24px; left: 16px; height: 60px; border-radius: 3px 3px 26px 26px; background: linear-gradient(90deg, rgba(133,67,26,.84), rgba(76,33,9,.92)); }
-    .art-label { position: absolute; z-index: 3; top: 50%; right: 2%; width: 114px; padding-left: 12px; border-left: 1px solid var(--sky); color: rgba(255,255,255,.78); font-size: 10px; line-height: 1.7; letter-spacing: .1em; }
-    .art-label strong { display: block; color: var(--sky); font: 600 20px/1 "Playfair Display", serif; }
-    .scroll-line { position: absolute; bottom: 23px; left: max(24px, calc((100% - 1120px) / 2)); z-index: 2; display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,.56); font-size: 10px; letter-spacing: .15em; }
-    .scroll-line::before { content: ""; width: 38px; height: 1px; background: currentColor; }
-
-    /* Intro */
-    .intro { padding: 118px 0; background: #fff; }
-    .intro-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(45px, 8vw, 105px); align-items: center; }
-    .intro-stamp { position: relative; min-height: 355px; }
-    .stamp-circle { position: absolute; inset: 13px auto auto 0; display: grid; width: 290px; height: 290px; place-items: center; border: 1px solid #9dd7e7; border-radius: 50%; color: var(--blue); text-align: center; }
-    .stamp-circle::before { content: ""; position: absolute; inset: 14px; border: 1px dashed #a5d9e6; border-radius: 50%; }
-    .stamp-circle strong { display: block; font: 700 43px/1 "Playfair Display", serif; letter-spacing: -.04em; }
-    .stamp-circle span { display: block; margin-top: 8px; font-size: 11px; font-weight: 700; letter-spacing: .14em; }
-    .stamp-card { position: absolute; right: 0; bottom: 0; width: 216px; padding: 21px 23px; color: #fff; background: var(--blue); box-shadow: var(--shadow); }
-    .stamp-card p { margin: 0; font-size: 12px; line-height: 1.8; }
-    .stamp-card b { display: block; margin-bottom: 8px; color: var(--sky); font: 600 12px/1 "Playfair Display", serif; letter-spacing: .14em; }
-    .intro .section-copy { font-size: 16px; }
-    .intro-link { display: inline-flex; gap: 10px; margin-top: 28px; padding-bottom: 4px; border-bottom: 1px solid var(--blue); color: var(--blue); font-size: 14px; font-weight: 700; }
-
-    /* Coffees */
-    .coffee-section { padding: 110px 0 120px; background: var(--mist); }
-    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 43px; }
-    .section-head .section-copy { max-width: 35ch; margin: 0; font-size: 14px; }
-    .coffee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 19px; }
-    .coffee-card { position: relative; min-height: 384px; overflow: hidden; color: #fff; background: var(--navy); box-shadow: var(--shadow); }
-    .coffee-card::before { content: ""; position: absolute; right: -63px; bottom: -87px; width: 238px; height: 238px; border: 1px solid rgba(255,255,255,.29); border-radius: 50%; }
-    .coffee-card::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: linear-gradient(160deg, transparent 42%, rgba(0,0,0,.28)); pointer-events: none; }
-    .coffee-card:nth-child(2) { background: #106396; }
-    .coffee-card:nth-child(3) { background: #164c68; }
-    .coffee-content { position: relative; z-index: 1; display: flex; flex-direction: column; min-height: 384px; padding: 29px; }
-    .coffee-number { color: var(--sky); font: 600 13px/1 "Playfair Display", serif; letter-spacing: .08em; }
-    .coffee-origin { margin: auto 0 7px; color: rgba(255,255,255,.63); font-size: 11px; font-weight: 600; letter-spacing: .14em; }
-    .coffee-card h3 { margin: 0; font: 700 27px/1.35 "Noto Serif TC", serif; letter-spacing: .05em; }
-    .coffee-notes { margin: 11px 0 22px; color: rgba(255,255,255,.75); font-size: 13px; }
-    .coffee-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.25); }
-    .price { font-size: 14px; font-weight: 700; }
-    .add-button { padding: 5px 0; border: 0; color: #fff; background: none; font-size: 12px; font-weight: 700; letter-spacing: .07em; }
-    .add-button:hover { color: var(--sand); }
-
-    /* Brew process */
-    .brew { overflow: hidden; padding: 118px 0; background: #fff; }
-    .brew-grid { display: grid; grid-template-columns: .93fr 1.07fr; gap: clamp(44px, 9vw, 112px); align-items: center; }
-    .brew-visual { position: relative; min-height: 396px; border: 1px solid var(--line); background: linear-gradient(140deg, #f4fafb 0 50%, #e5f4f7 50%); }
-    .brew-visual::before { content: ""; position: absolute; top: 35px; left: 34px; width: 70px; height: 1px; background: var(--blue); box-shadow: 0 9px 0 var(--blue), 0 18px 0 var(--blue); }
-    .pour-ring { position: absolute; top: 71px; right: 48px; width: 240px; height: 240px; border: 35px solid rgba(12,91,149,.13); border-radius: 50%; }
-    .pour-ring::after { content: ""; position: absolute; top: 45px; left: 45px; width: 80px; height: 80px; border: 3px solid var(--blue); border-radius: 50%; }
-    .brew-v60 { position: absolute; bottom: 35px; left: 51%; width: 178px; height: 150px; border: 4px solid var(--blue); background: rgba(255,255,255,.54); clip-path: polygon(0 0,100% 0,73% 100%,27% 100%); transform: translateX(-50%); }
-    .brew-v60::before { content: ""; position: absolute; top: 14px; right: 16px; bottom: 0; left: 16px; border-left: 1px solid #8dcce0; border-right: 1px solid #8dcce0; transform: skewX(-11deg); }
-    .brew-caption { position: absolute; right: 25px; bottom: 21px; color: var(--blue); font: 600 10px/1.4 "Playfair Display", serif; letter-spacing: .13em; text-align: right; }
-    .brew-steps { display: grid; gap: 0; margin: 28px 0 0; padding: 0; list-style: none; }
-    .brew-steps li { display: grid; grid-template-columns: 43px 1fr; gap: 15px; padding: 17px 0; border-top: 1px solid var(--line); }
-    .brew-steps li:last-child { border-bottom: 1px solid var(--line); }
-    .step-no { color: var(--blue); font: 600 15px/1.7 "Playfair Display", serif; }
-    .step-copy b { display: block; font-size: 15px; }
-    .step-copy span { color: var(--muted); font-size: 13px; }
-
-    /* CTA and Footer */
-    .visit { position: relative; overflow: hidden; padding: 96px 0; color: #fff; background: var(--navy); text-align: center; }
-    .visit::before, .visit::after { content: ""; position: absolute; width: 370px; height: 370px; border: 1px solid rgba(117,198,232,.21); border-radius: 50%; }
-    .visit::before { top: -225px; left: -90px; }
-    .visit::after { right: -125px; bottom: -235px; }
-    .visit .wrap { position: relative; z-index: 1; }
-    .visit .eyebrow { justify-content: center; color: var(--sky); }
-    .visit .section-title { font-size: clamp(30px, 4vw, 45px); }
-    .visit p:not(.eyebrow) { max-width: 48ch; margin: 19px auto 28px; color: rgba(255,255,255,.73); }
-    .subscribe { display: flex; max-width: 500px; margin: 0 auto; border: 1px solid rgba(255,255,255,.5); }
-    .subscribe input { min-width: 0; flex: 1; padding: 13px 17px; border: 0; outline: none; color: #fff; background: transparent; }
-    .subscribe input::placeholder { color: rgba(255,255,255,.55); }
-    .subscribe button { padding: 0 22px; border: 0; color: var(--navy); background: var(--sand); font-size: 13px; font-weight: 700; white-space: nowrap; }
-    .subscribe button:hover { background: #f0c77f; }
-    footer { color: rgba(255,255,255,.67); background: #031c31; }
-    .footer-top { display: grid; grid-template-columns: 1.7fr 1fr 1fr; gap: 40px; padding: 58px 0 38px; }
-    .footer-brand { color: #fff; }
-    .footer-brand p { max-width: 31ch; margin: 16px 0 0; font-size: 13px; }
-    .footer-heading { margin: 0 0 15px; color: var(--sky); font-size: 11px; font-weight: 700; letter-spacing: .14em; }
-    .footer-list { margin: 0; padding: 0; list-style: none; font-size: 13px; }
-    .footer-list li + li { margin-top: 8px; }
-    .footer-list a:hover { color: #fff; }
-    .footer-bottom { display: flex; justify-content: space-between; gap: 24px; padding: 17px 0; border-top: 1px solid rgba(255,255,255,.14); color: rgba(255,255,255,.43); font-size: 11px; letter-spacing: .05em; }
-
-    .toast { position: fixed; right: 22px; bottom: 22px; z-index: 20; max-width: min(330px, calc(100% - 44px)); padding: 13px 18px; border-left: 3px solid var(--sand); color: #fff; background: var(--navy); box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translateY(12px); transition: opacity .25s, transform .25s; font-size: 13px; }
-    .toast.show { opacity: 1; transform: translateY(0); }
-
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    @media (max-width: 820px) {
-      .nav { min-height: 68px; }
-      .menu-toggle { display: block; width: 42px; height: 42px; font-size: 23px; }
-      .nav-links { position: absolute; top: 68px; right: 0; left: 0; display: grid; gap: 0; max-height: 0; overflow: hidden; background: #05233c; transition: max-height .27s ease; }
-      .nav-links.open { max-height: 300px; border-top: 1px solid rgba(255,255,255,.12); }
-      .nav-links a { padding: 13px 24px; border-bottom: 1px solid rgba(255,255,255,.09); }
-      .nav-links .nav-cta { margin: 11px 24px; text-align: center; }
-      .hero, .hero-grid { min-height: 710px; }
-      .hero-grid { grid-template-columns: 1fr; padding-top: 115px; }
-      .hero-art { min-height: 278px; margin-top: -35px; }
-      .sun { right: 14%; width: 114px; height: 114px; }
-      .mountain { width: 82%; height: 92%; }
-      .coffee-vessel { right: 15%; transform: scale(.72); transform-origin: bottom right; }
-      .art-label { top: 44%; right: 1%; }
-      .intro-grid, .brew-grid { grid-template-columns: 1fr; }
-      .intro-stamp { max-width: 510px; width: 100%; }
-      .coffee-grid { grid-template-columns: 1fr 1fr; }
-      .coffee-card:last-child { grid-column: span 2; }
-      .footer-top { grid-template-columns: 1.4fr 1fr; }
-      .footer-brand { grid-column: span 2; }
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      color: var(--text-muted);
     }
 
-    @media (max-width: 560px) {
-      .wrap { width: min(100% - 34px, 1120px); }
-      .hero, .hero-grid { min-height: 680px; }
-      .hero-grid { padding-top: 100px; padding-bottom: 48px; }
-      .hero-title { font-size: 40px; }
-      .hero-lede { margin: 18px 0 23px; font-size: 14px; }
-      .hero-art { min-height: 240px; }
-      .art-label { display: none; }
-      .scroll-line { bottom: 12px; left: 17px; }
-      .intro, .coffee-section, .brew { padding: 76px 0; }
-      .stamp-circle { width: 245px; height: 245px; }
-      .stamp-card { width: 185px; padding: 16px; }
-      .section-head { display: block; }
-      .section-head .section-copy { margin-top: 15px; }
-      .coffee-grid { grid-template-columns: 1fr; }
-      .coffee-card, .coffee-card:last-child { grid-column: auto; min-height: 330px; }
-      .coffee-content { min-height: 330px; }
-      .brew-visual { min-height: 310px; }
-      .pour-ring { top: 48px; right: 25px; width: 190px; height: 190px; border-width: 27px; }
-      .visit { padding: 76px 0; }
-      .subscribe { display: block; border: 0; }
-      .subscribe input { width: 100%; border: 1px solid rgba(255,255,255,.5); }
-      .subscribe button { width: 100%; min-height: 48px; margin-top: 9px; }
-      .footer-top { grid-template-columns: 1fr; gap: 30px; }
-      .footer-brand { grid-column: auto; }
-      .footer-bottom { display: block; }
-      .footer-bottom span + span { display: block; margin-top: 6px; }
+    .modal-box h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
-      .reveal { opacity: 1; transform: none; }
+    .modal-box p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .order-list {
+      max-height: 200px;
+      overflow-y: auto;
+      margin-bottom: 20px;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      padding: 12px 0;
+    }
+
+    .order-item-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      padding: 6px 0;
+    }
+
+    .order-total-row {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    /* Responsive Queries */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .hero-image-wrapper {
+        max-width: 520px;
+        margin: 0 auto;
+      }
+      .ingredients-grid,
+      .schedule-timeline,
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+      .store-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .promo-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+        padding: 40px 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      .nav-links.mobile-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 24px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        border-bottom: 1px solid var(--border-color);
+      }
+      .hero-highlights {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="site-header" id="top">
-    <nav class="nav wrap" aria-label="主要導覽">
-      <a class="brand" href="#top" aria-label="回到藍天咖啡首頁">
-        <span class="brand-mark">B</span>
-        <span>藍天咖啡<small>BLUE SKY COFFEE</small></span>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo">
+        <div class="logo-badge">灰</div>
+        <div class="brand-text">
+          <h1 class="serif">灰色麵包店</h1>
+          <span class="en-font">Atelier Gris Bakery</span>
+        </div>
       </a>
-      <button class="menu-toggle" type="button" aria-label="開啟導覽選單" aria-expanded="false" aria-controls="navLinks">☰</button>
-      <div class="nav-links" id="navLinks">
-        <a href="#story">我們的堅持</a>
-        <a href="#coffee">本季選豆</a>
-        <a href="#brew">沖煮日常</a>
-        <a class="nav-cta" href="#visit">訂閱風味通信</a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">品牌初衷</a></li>
+          <li><a href="#ingredients">嚴選三要素</a></li>
+          <li><a href="#products">手作麵包</a></li>
+          <li><a href="#schedule">出爐時程</a></li>
+          <li><a href="#reviews">顧客讚譽</a></li>
+          <li><a href="#store">門市據點</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <button class="cart-btn" id="openCartBtn" onclick="toggleCartModal()">
+          <span>🧺 預約籃</span>
+          <span class="cart-badge" id="cartCount">0</span>
+        </button>
+        <a href="#products" class="btn-primary">線上點單</a>
+        <button class="menu-toggle" aria-label="切換選單" onclick="toggleMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="hero" aria-labelledby="heroTitle">
-      <div class="hero-grid wrap">
-        <div class="reveal">
-          <p class="eyebrow">HAND BREWED · SLOWLY ROASTED</p>
-          <h1 class="hero-title" id="heroTitle">讓風味，<br>在<span class="blue">藍天</span>下<br>慢慢抵達。</h1>
-          <p class="hero-lede">藍天咖啡為喜歡手沖的你，挑選值得細品的單一產區咖啡豆。從第一縷花香，到最後一口回甘，每一杯都有自己的晴朗天氣。</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#coffee">探索本季風味 <span class="arrow">→</span></a>
-            <a class="button button-outline" href="#story">認識藍天</a>
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-tag">PURE ARTISAN BAKERY &bull; 手作工坊</div>
+        <h2 class="hero-title serif">
+          在簡約的<em>灰色調</em>中，<br>品嚐最純粹的麥香。
+        </h2>
+        <p class="hero-description">
+          灰色麵包店專為熱愛麵包的你而生。我們捨棄繁複調味，回歸麵包本質——堅持選用日本頂級高階麵粉、法國 AOP 天然發酵奶油與在地優質純鮮乳，歷經 24 小時低溫長時熟成，帶來回甘有嚼勁的純淨美味。
+        </p>
+
+        <div class="hero-actions">
+          <a href="#products" class="btn-primary">探索人氣熱銷 ➔</a>
+          <a href="#ingredients" class="btn-outline">了解三大嚴選原料</a>
+        </div>
+
+        <div class="hero-highlights">
+          <div class="highlight-item">
+            <h4 class="en-font">100%</h4>
+            <p>日本進口高階小麥粉</p>
           </div>
-          <p class="hero-note">TAIPEI · TAIWAN · EST. 2018</p>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="sun"></div>
-          <div class="mountain"></div>
-          <div class="coffee-vessel"><div class="dripper"></div><div class="carafe"></div></div>
-          <p class="art-label"><strong>92°C</strong>理想水溫<br>細細喚醒香氣</p>
-        </div>
-      </div>
-      <p class="scroll-line">SCROLL TO DISCOVER</p>
-    </section>
-
-    <section class="intro" id="story" aria-labelledby="storyTitle">
-      <div class="intro-grid wrap">
-        <div class="intro-stamp reveal" aria-hidden="true">
-          <div class="stamp-circle"><div><strong>慢一點，<br>更清楚。</strong><span>LET THE FLAVOUR SPEAK</span></div></div>
-          <div class="stamp-card"><b>BLUE SKY NOTE</b><p>一杯好咖啡，從來不是匆忙完成的事。</p></div>
-        </div>
-        <div class="reveal">
-          <p class="eyebrow">OUR PHILOSOPHY</p>
-          <h2 class="section-title" id="storyTitle">在一杯之間，<br>看見產地的<em>晴朗</em>。</h2>
-          <p class="section-copy">我們相信，精品咖啡的美好不該被複雜掩蓋。以小批次烘焙留住豆子的個性，再用穩定、誠實的手沖，讓風土與時間在杯中變得清晰。</p>
-          <p class="section-copy">給懂得放慢腳步的人，也給每一個想重新認識咖啡的人。</p>
-          <a class="intro-link" href="#brew">看看我們如何沖煮 <span>→</span></a>
+          <div class="highlight-item">
+            <h4 class="en-font">A.O.P.</h4>
+            <p>法國產區限定發酵奶油</p>
+          </div>
+          <div class="highlight-item">
+            <h4 class="en-font">24 Hours</h4>
+            <p>天然魯邦種慢速低溫發酵</p>
+          </div>
         </div>
       </div>
-    </section>
 
-    <section class="coffee-section" id="coffee" aria-labelledby="coffeeTitle">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div><p class="eyebrow">SEASONAL SELECTION</p><h2 class="section-title" id="coffeeTitle">今天，想喝哪一片<em>藍天</em>？</h2></div>
-          <p class="section-copy">三款當季單品，為不同的晨光、午後與靜夜而選。</p>
+      <div class="hero-media">
+        <div class="hero-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80" alt="灰色麵包店天然手作酸種麵包" loading="lazy">
         </div>
-        <div class="coffee-grid">
-          <article class="coffee-card reveal">
-            <div class="coffee-content">
-              <span class="coffee-number">01 / BRIGHT</span>
-              <p class="coffee-origin">ETHIOPIA · YIRGACHEFFE</p>
-              <h3>衣索比亞<br>耶加雪菲</h3>
-              <p class="coffee-notes">白花、佛手柑、蜂蜜</p>
-              <div class="coffee-bottom"><span class="price">NT$ 520 / 200g</span><button class="add-button" type="button" data-coffee="衣索比亞・耶加雪菲">加入收藏 ＋</button></div>
-            </div>
-          </article>
-          <article class="coffee-card reveal">
-            <div class="coffee-content">
-              <span class="coffee-number">02 / JUICY</span>
-              <p class="coffee-origin">KENYA · KIRINYAGA</p>
-              <h3>肯亞<br>祈安布</h3>
-              <p class="coffee-notes">黑醋栗、洛神、葡萄柚</p>
-              <div class="coffee-bottom"><span class="price">NT$ 580 / 200g</span><button class="add-button" type="button" data-coffee="肯亞・祈安布">加入收藏 ＋</button></div>
-            </div>
-          </article>
-          <article class="coffee-card reveal">
-            <div class="coffee-content">
-              <span class="coffee-number">03 / ROUND</span>
-              <p class="coffee-origin">COLOMBIA · HUILA</p>
-              <h3>哥倫比亞<br>慧蘭</h3>
-              <p class="coffee-notes">黃桃、焦糖、可可尾韻</p>
-              <div class="coffee-bottom"><span class="price">NT$ 460 / 200g</span><button class="add-button" type="button" data-coffee="哥倫比亞・慧蘭">加入收藏 ＋</button></div>
-            </div>
-          </article>
+        <div class="hero-badge-float">
+          <div class="float-icon">🌾</div>
+          <div class="float-text">
+            <strong>每日手作現烤現出爐</strong>
+            <span>每口都是職人手心溫度的香氣</span>
+          </div>
         </div>
       </div>
-    </section>
-
-    <section class="brew" id="brew" aria-labelledby="brewTitle">
-      <div class="brew-grid wrap">
-        <div class="brew-visual reveal" aria-hidden="true">
-          <div class="pour-ring"></div><div class="brew-v60"></div><p class="brew-caption">V60 / 15G : 240ML<br>2'45''</p>
-        </div>
-        <div class="reveal">
-          <p class="eyebrow">A QUIET RITUAL</p>
-          <h2 class="section-title" id="brewTitle">把時間交給水，<br>讓咖啡說<em>自己的話</em>。</h2>
-          <p class="section-copy">不需要繁複儀式，只要三個安靜的步驟。每一個參數，都是為了讓你更靠近豆子原本的樣子。</p>
-          <ol class="brew-steps">
-            <li><span class="step-no">01</span><span class="step-copy"><b>研磨，先聞見期待</b><span>15g 中細研磨，讓香氣從指尖開始展開。</span></span></li>
-            <li><span class="step-no">02</span><span class="step-copy"><b>悶蒸，等待第一個呼吸</b><span>以 92°C 熱水浸潤 30 秒，喚醒甜感與層次。</span></span></li>
-            <li><span class="step-no">03</span><span class="step-copy"><b>注水，保持自己的節奏</b><span>穩定畫圈，讓 240ml 的清澈在 2 分 45 秒完成。</span></span></li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section class="visit" id="visit" aria-labelledby="visitTitle">
-      <div class="wrap reveal">
-        <p class="eyebrow">THE BLUE SKY LETTER</p>
-        <h2 class="section-title" id="visitTitle">把下一杯好咖啡，<br>寄到你的日常裡。</h2>
-        <p>每月一封風味通信，分享新豆、沖煮靈感與只給會員的小小驚喜。</p>
-        <form class="subscribe" id="subscribeForm">
-          <input type="email" aria-label="電子郵件地址" placeholder="留下你的 Email" required>
-          <button type="submit">訂閱風味通信</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-top wrap">
-      <div class="footer-brand"><a class="brand" href="#top"><span class="brand-mark">B</span><span>藍天咖啡<small>BLUE SKY COFFEE</small></span></a><p>為喜愛手沖咖啡的你，留下一段慢慢品味、微微放晴的時間。</p></div>
-      <div><p class="footer-heading">EXPLORE</p><ul class="footer-list"><li><a href="#story">我們的堅持</a></li><li><a href="#coffee">本季選豆</a></li><li><a href="#brew">沖煮日常</a></li></ul></div>
-      <div><p class="footer-heading">CONTACT</p><ul class="footer-list"><li><a href="mailto:hello@bluesky.coffee">hello@bluesky.coffee</a></li><li>台北市大安區晴朗路 18 號</li><li>每日 10:00 — 19:00</li></ul></div>
     </div>
-    <div class="footer-bottom wrap"><span>© 2026 BLUE SKY COFFEE. ALL RIGHTS RESERVED.</span><span>BREW SLOW · LIVE BRIGHT</span></div>
+  </section>
+
+  <!-- Brand Style & Ingredients Section (高階麵粉、奶油、牛奶) -->
+  <section class="ingredients-section" id="ingredients">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-sub">THE ESSENTIAL ELEMENTS</span>
+        <h2 class="section-title serif">極致嚴選三大核心原料</h2>
+        <p class="section-desc">
+          我們相信，好麵包不需要過度裝飾。灰色代表冷靜專注、不隨波逐流的低調美學；而內在，則完全由最頂級的食材來對話。
+        </p>
+      </div>
+
+      <div class="ingredients-grid">
+        <!-- Ingredient 1: 高階麵粉 -->
+        <article class="ingredient-card">
+          <div class="card-thumb">
+            <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=800&q=80" alt="高階小麥麵粉" loading="lazy">
+            <span class="ingredient-label">FLOUR</span>
+          </div>
+          <div class="card-body">
+            <h3 class="serif">日本極上高階麵粉</h3>
+            <span class="origin">日清製粉 ‧ 山茶花 / 百合花小麥</span>
+            <p>
+              選用日本百年老廠最高等級小麥精華，灰分質地純淨細緻。吸水性極佳，賦予麵團澎潤綿密的組織與純淨的天然麥穀回甘香。
+            </p>
+          </div>
+        </article>
+
+        <!-- Ingredient 2: 奶油 -->
+        <article class="ingredient-card">
+          <div class="card-thumb">
+            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80" alt="法國發酵奶油可頌" loading="lazy">
+            <span class="ingredient-label">BUTTER</span>
+          </div>
+          <div class="card-body">
+            <h3 class="serif">法國 AOP 發酵天然奶油</h3>
+            <span class="origin">法國諾曼第法定產區認證</span>
+            <p>
+              由純草飼乳牛牛奶慢速天然發酵提煉，乳脂含量高達 84%。融點適中、奶香清雅不膩，烘烤後化為層層分明、入口酥化之極品酥皮。
+            </p>
+          </div>
+        </article>
+
+        <!-- Ingredient 3: 純牛奶 -->
+        <article class="ingredient-card">
+          <div class="card-thumb">
+            <img src="https://images.unsplash.com/photo-1528750997573-59b89d56f4f7?auto=format&fit=crop&w=800&q=80" alt="在地優質純鮮乳" loading="lazy">
+            <span class="ingredient-label">PURE MILK</span>
+          </div>
+          <div class="card-body">
+            <h3 class="serif">在地小農單一牧場鮮乳</h3>
+            <span class="origin">100% 無調整、零加水配方</span>
+            <p>
+              每日早晨產地冷鏈直達。在特定吐司與軟歐包系列中，完全不加一滴水，全以純鮮奶和麵，打造濕潤柔潤如絲綢般的頂級保水口感。
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Products Section (吸引客戶消費麵包) -->
+  <section class="products-section" id="products">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-sub">OUR FRESH CREATIONS</span>
+        <h2 class="section-title serif">今日人氣手作麵包</h2>
+        <p class="section-desc">
+          精算發酵時間與烘焙火候，每日限量手作。點選「加入預約」即時預留，門市隨到隨取，不擔心向隅。
+        </p>
+      </div>
+
+      <!-- Category Filter -->
+      <div class="category-filter">
+        <button class="filter-btn active" onclick="filterProducts('all')">全部款式 (All)</button>
+        <button class="filter-btn" onclick="filterProducts('sourdough')">天然酸種歐包</button>
+        <button class="filter-btn" onclick="filterProducts('croissant')">AOP 酥皮可頌</button>
+        <button class="filter-btn" onclick="filterProducts('shokupan')">極生純奶吐司</button>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+        <!-- Product 1 -->
+        <div class="product-card" data-category="sourdough">
+          <div class="product-img-box">
+            <img src="https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?auto=format&fit=crop&w=800&q=80" alt="灰色經典黑芝麻魯邦酸種" loading="lazy">
+            <span class="product-tag">本店招牌</span>
+          </div>
+          <div class="product-content">
+            <h4 class="serif">灰色經典 ‧ 芝麻魯邦歐包</h4>
+            <div class="product-features">
+              <span>野生酸種</span>
+              <span>石臼全麥</span>
+            </div>
+            <p class="product-desc">
+              加入研磨低溫焙煎黑芝麻，呈現高雅灰黑色澤。外脆內 Q，氣孔均勻，酸韻與麥香在咀嚼間綻放。
+            </p>
+            <div class="product-footer">
+              <div class="product-price">NT$ 180 <small>/ 個</small></div>
+              <button class="add-to-cart-btn" onclick="addToCart('灰色經典 ‧ 芝麻魯邦歐包', 180)">+ 加入預約</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card" data-category="croissant">
+          <div class="product-img-box">
+            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80" alt="法國 AOP 蜂巢可頌" loading="lazy">
+            <span class="product-tag">秒殺限定</span>
+          </div>
+          <div class="product-content">
+            <h4 class="serif">法國 AOP 蜂巢千層可頌</h4>
+            <div class="product-features">
+              <span>AOP奶油</span>
+              <span>16層摺疊</span>
+            </div>
+            <p class="product-desc">
+              嚴格控制室溫摺疊十六層，切開呈現極致均勻蜂巢組織，外層酥脆化口、內裡奶香飽滿四溢。
+            </p>
+            <div class="product-footer">
+              <div class="product-price">NT$ 85 <small>/ 個</small></div>
+              <button class="add-to-cart-btn" onclick="addToCart('法國 AOP 蜂巢千層可頌', 85)">+ 加入預約</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card" data-category="shokupan">
+          <div class="product-img-box">
+            <img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=800&q=80" alt="極生純濃鮮乳吐司" loading="lazy">
+            <span class="product-tag">零加水配方</span>
+          </div>
+          <div class="product-content">
+            <h4 class="serif">極生純濃鮮奶吐司</h4>
+            <div class="product-features">
+              <span>山茶花麵粉</span>
+              <span>純鮮乳製</span>
+            </div>
+            <p class="product-desc">
+              不加任何一滴水，以鮮奶慢火熬煮湯種。連吐司邊都極致柔軟，入口即化的輕柔甘甜讓人難以忘懷。
+            </p>
+            <div class="product-footer">
+              <div class="product-price">NT$ 220 <small>/ 條</small></div>
+              <button class="add-to-cart-btn" onclick="addToCart('極生純濃鮮奶吐司', 220)">+ 加入預約</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card" data-category="sourdough">
+          <div class="product-img-box">
+            <img src="https://images.unsplash.com/photo-1597079910443-60c43fc4f749?auto=format&fit=crop&w=800&q=80" alt="鹽之花海鹽奶油法棍" loading="lazy">
+            <span class="product-tag">法式傳統</span>
+          </div>
+          <div class="product-content">
+            <h4 class="serif">鹽之花脆皮法國長棍</h4>
+            <div class="product-features">
+              <span>布列塔尼鹽花</span>
+              <span>石板烘烤</span>
+            </div>
+            <p class="product-desc">
+              法國 T65 冠軍麵粉與葛宏德鹽之花調合，高溫石板直接烘烤，薄脆外殼與充滿濕度的彈牙心部。
+            </p>
+            <div class="product-footer">
+              <div class="product-price">NT$ 95 <small>/ 根</small></div>
+              <button class="add-to-cart-btn" onclick="addToCart('鹽之花脆皮法國長棍', 95)">+ 加入預約</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Promotion CTA Banner -->
+      <div class="promo-banner">
+        <div class="promo-text">
+          <h3 class="serif">首次加入線上預約，享全單 9 折禮遇</h3>
+          <p>新加入灰色麵包店好友，立即領取 NT$50 烘焙折價券，每日現烤限量麵包為您貼心預留免排隊！</p>
+        </div>
+        <button class="promo-btn" onclick="openPromoModal()">立即領取優惠券</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Baking Schedule Section -->
+  <section class="schedule-section" id="schedule">
+    <div class="container">
+      <div class="schedule-header">
+        <span class="section-sub" style="color: var(--gold-warm);">TIMETABLE</span>
+        <h2 class="section-title serif">每日麵包出爐時刻表</h2>
+        <p class="section-desc">
+          麵包在出爐後 30 至 60 分鐘達到最佳口感平衡。歡迎記下您喜愛款式的出爐時間前來門市選購！
+        </p>
+      </div>
+
+      <div class="schedule-timeline">
+        <div class="timeline-card">
+          <div class="timeline-time en-font">
+            10:30 <span>AM</span>
+          </div>
+          <h4 class="serif">早晨純麥與經典吐司</h4>
+          <ul>
+            <li>極生純濃鮮奶吐司</li>
+            <li>全麥核桃鄉村歐包</li>
+            <li>日式鹽奶油捲</li>
+            <li>紅豆奶油法式軟法</li>
+          </ul>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-time en-font">
+            14:00 <span>PM</span>
+          </div>
+          <h4 class="serif">午後酥脆可頌與丹麥</h4>
+          <ul>
+            <li>法國 AOP 蜂巢千層可頌</li>
+            <li>黑巧榛果杏仁可頌</li>
+            <li>靜岡抹茶乳酪可頌</li>
+            <li>卡士達丹麥千層捲</li>
+          </ul>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-time en-font">
+            16:30 <span>PM</span>
+          </div>
+          <h4 class="serif">傍晚酸種與法式長棍</h4>
+          <ul>
+            <li>灰色經典芝麻魯邦酸種</li>
+            <li>鹽之花脆皮法國長棍</li>
+            <li>煙燻高達起司羅勒歐包</li>
+            <li>大蒜奶油法棍</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-sub">TESTIMONIALS</span>
+        <h2 class="section-title serif">麵包愛好者的真心讚賞</h2>
+        <p class="section-desc">
+          純粹的原料會替自己說話。感謝每一位在清晨與黃昏，走進灰色麵包店分享香氣的朋友。
+        </p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <blockquote>
+            「身為酸種重度成癮者，灰色麵包店的芝麻魯邦酸種完全擊中我！外皮酥脆帶有焦糖化香氣，內部濕潤柔軟而且帶有耐人尋味的乳酸微酸，回烤依然完美。」
+          </blockquote>
+          <div class="reviewer-info">
+            <div class="reviewer-avatar">林</div>
+            <div class="reviewer-meta">
+              <strong>林小姐</strong>
+              <span>麵包愛好者 ‧ 忠實顧客 2 年</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <blockquote>
+            「純奶生吐司真的不誇張，開袋就撲鼻而來天然乳脂清香，完全不是化學香精味。家裡小孩早餐直接撕著吃一整片，吃完嘴裡完全沒有黏膩感，非常推薦！」
+          </blockquote>
+          <div class="reviewer-info">
+            <div class="reviewer-avatar">張</div>
+            <div class="reviewer-meta">
+              <strong>張先生</strong>
+              <span>咖啡烘豆師</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <blockquote>
+            「法國 AOP 可頌的酥化層次太驚人了！一口咬下碎屑漫天但內在輕盈如雲朵，奶油香氣優雅高貴。店面的灰色調給人非常舒服乾淨的職人感。」
+          </blockquote>
+          <div class="reviewer-info">
+            <div class="reviewer-avatar">陳</div>
+            <div class="reviewer-meta">
+              <strong>陳主廚</strong>
+              <span>私廚法式甜點師</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Store Information & Map Section -->
+  <section class="store-section" id="store">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-sub">VISIT OUR ATELIER</span>
+        <h2 class="section-title serif">門市據點與營業資訊</h2>
+        <p class="section-desc">
+          踏入以極簡灰調打造的烘焙工房，在寧靜空間中感受麥香與奶油的溫暖包圍。
+        </p>
+      </div>
+
+      <div class="store-grid">
+        <div class="store-details">
+          <div class="store-info-item">
+            <div class="store-info-icon">📍</div>
+            <div class="store-info-text">
+              <h5>門市地址</h5>
+              <p>台北市大安區仁愛路四段 123 巷 8 號 1 樓<br>(捷運忠孝敦化站 6 號出口步行 5 分鐘)</p>
+            </div>
+          </div>
+
+          <div class="store-info-item">
+            <div class="store-info-icon">⏰</div>
+            <div class="store-info-text">
+              <h5>營業時間</h5>
+              <p>週二至週日 10:00 - 19:30 (每週一固定公休研發麵團)<br>※ 麵包每日限量，售完提早打烊</p>
+            </div>
+          </div>
+
+          <div class="store-info-item">
+            <div class="store-info-icon">📞</div>
+            <div class="store-info-text">
+              <h5>連絡電話 & 客服</h5>
+              <p>(02) 2711-8899 / service@greybakery.com</p>
+            </div>
+          </div>
+
+          <div class="store-info-item">
+            <div class="store-info-icon">🛵</div>
+            <div class="store-info-text">
+              <h5>外帶自取與雙北低溫快送</h5>
+              <p>當日出爐前 2 小時完成線上預訂，即可免排隊隨到隨取；大台北地區滿 NT$800 享當日專車派送。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="store-photo-card">
+          <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=800&q=80" alt="灰色麵包店門市空間" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 class="serif">灰色麵包店 Atelier Gris</h3>
+          <p>
+            以灰之名，致敬質樸純粹。堅持選用最高階小麥麵粉、天然產區奶油與純鮮乳，慢火發酵，烘焙每天值得細細品嚐的麥香溫度。
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>探索滋味</h5>
+          <ul>
+            <li><a href="#products">天然酸種歐包</a></li>
+            <li><a href="#products">AOP 酥皮可頌</a></li>
+            <li><a href="#products">極生純濃鮮奶吐司</a></li>
+            <li><a href="#schedule">每日出爐時間表</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>原料哲學</h5>
+          <ul>
+            <li><a href="#ingredients">日本進口高階麵粉</a></li>
+            <li><a href="#ingredients">法國 AOP 發酵奶油</a></li>
+            <li><a href="#ingredients">產地牧場零調整鮮奶</a></li>
+            <li><a href="#about">24 小時低溫長時熟成</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>顧客服務</h5>
+          <ul>
+            <li><a href="#store">門市自取指引</a></li>
+            <li><a href="#store">大宗企業訂購</a></li>
+            <li><a href="#reviews">好評顧客回饋</a></li>
+            <li><a href="#store">常見問題 FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 灰色麵包店 Atelier Gris Bakery. All Rights Reserved.</div>
+        <div>規格驅動網站設計 ‧ 純粹手作 ‧ 頂級烘焙</div>
+      </div>
+    </div>
   </footer>
 
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <!-- Toast Element -->
+  <div class="toast" id="toastNotice">
+    <span>🍞</span>
+    <span id="toastMsg">已加入預約清單！</span>
+  </div>
+
+  <!-- Shopping / Reservation Modal -->
+  <div class="modal-overlay" id="cartModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="toggleCartModal()">&times;</button>
+      <h3 class="serif">我的麵包預約籃</h3>
+      <p>今日手作限量，當日取貨請於門市出示取貨編號即可。</p>
+      
+      <div class="order-list" id="orderItemsContainer">
+        <div style="text-align:center; color: var(--text-muted); padding: 20px 0;">
+          預約籃目前還是空的，快挑選喜愛的手作麵包吧！
+        </div>
+      </div>
+
+      <div class="order-total-row">
+        <span>預約總金額：</span>
+        <span id="cartTotalPrice" style="color: var(--gold-warm);">NT$ 0</span>
+      </div>
+
+      <button class="btn-primary" style="width: 100%; justify-content: center; padding: 12px;" onclick="checkoutOrder()">
+        確認送出預訂 (門市取貨付款)
+      </button>
+    </div>
+  </div>
+
+  <!-- JavaScript Interaction -->
   <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.getElementById('navLinks');
-    menuToggle.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', open);
-      menuToggle.setAttribute('aria-label', open ? '關閉導覽選單' : '開啟導覽選單');
-      menuToggle.textContent = open ? '×' : '☰';
-    });
-    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', '開啟導覽選單');
-      menuToggle.textContent = '☰';
-    }));
+    // Shopping Cart State
+    let cart = [];
 
-    const toast = document.getElementById('toast');
-    let toastTimer;
-    function showToast(message) {
-      window.clearTimeout(toastTimer);
-      toast.textContent = message;
+    function addToCart(title, price) {
+      cart.push({ title, price, time: new Date().toLocaleTimeString() });
+      updateCartUI();
+      showToast(`已將「${title}」加入預約籃！`);
+    }
+
+    function updateCartUI() {
+      const cartCountEl = document.getElementById('cartCount');
+      const orderItemsContainer = document.getElementById('orderItemsContainer');
+      const cartTotalPrice = document.getElementById('cartTotalPrice');
+
+      cartCountEl.textContent = cart.length;
+
+      if (cart.length === 0) {
+        orderItemsContainer.innerHTML = '<div style="text-align:center; color: var(--text-muted); padding: 20px 0;">預約籃目前還是空的，快挑選喜愛的手作麵包吧！</div>';
+        cartTotalPrice.textContent = 'NT$ 0';
+        return;
+      }
+
+      let total = 0;
+      let html = '';
+      cart.forEach((item, index) => {
+        total += item.price;
+        html += `
+          <div class="order-item-row">
+            <span>${item.title}</span>
+            <span>NT$ ${item.price} <button onclick="removeItem(${index})" style="background:none; border:none; color:red; cursor:pointer; margin-left:8px;">✕</button></span>
+          </div>
+        `;
+      });
+
+      orderItemsContainer.innerHTML = html;
+      cartTotalPrice.textContent = `NT$ ${total}`;
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    }
+
+    function toggleCartModal() {
+      const modal = document.getElementById('cartModal');
+      modal.classList.toggle('active');
+    }
+
+    function checkoutOrder() {
+      if (cart.length === 0) {
+        alert('預約籃內尚無麵包，請先選擇商品！');
+        return;
+      }
+      const orderNo = 'GRIS-' + Math.floor(100000 + Math.random() * 900000);
+      alert(`🎉 預訂成功！\n您的取貨單號為：【${orderNo}】\n請於今日 18:30 前憑手機號碼至門市取貨。謝謝您的支持！`);
+      cart = [];
+      updateCartUI();
+      toggleCartModal();
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toastNotice');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.textContent = msg;
       toast.classList.add('show');
-      toastTimer = window.setTimeout(() => toast.classList.remove('show'), 2600);
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2500);
     }
-    document.querySelectorAll('[data-coffee]').forEach(button => button.addEventListener('click', () => {
-      showToast(`已將「${button.dataset.coffee}」加入你的收藏。`);
-    }));
-    document.getElementById('subscribeForm').addEventListener('submit', event => {
-      event.preventDefault();
-      event.currentTarget.reset();
-      showToast('謝謝訂閱，下一封晴朗的風味通信即將寄出。');
-    });
 
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const revealItems = document.querySelectorAll('.reveal');
-    if (reducedMotion || !('IntersectionObserver' in window)) {
-      revealItems.forEach(item => item.classList.add('visible'));
-    } else {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: .12 });
-      revealItems.forEach(item => observer.observe(item));
+    function openPromoModal() {
+      showToast('🎁 已領取 9 折專屬優惠代碼：GREY90');
     }
+
+    // Filter Products
+    function filterProducts(category) {
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('mobile-open');
+    }
+
+    // Smooth link click & auto-close mobile menu
+    document.querySelectorAll('.nav-links a').forEach(anchor => {
+      anchor.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('mobile-open');
+      });
+    });
   </script>
 </body>
 </html>
