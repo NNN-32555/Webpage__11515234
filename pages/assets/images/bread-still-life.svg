@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 480" role="img" aria-labelledby="title desc">
+  <title id="title">麵包與熱飲插畫</title>
+  <desc id="desc">一條金黃色麵包、一個小可頌與一杯熱飲，置於粉色桌面上。</desc>
+  <rect width="620" height="480" fill="#f6dce1"/>
+  <circle cx="322" cy="235" r="170" fill="#f3cbd3"/>
+  <ellipse cx="320" cy="375" rx="225" ry="35" fill="#d9aab2" opacity=".55"/>
+  <path d="M119 268c8-64 67-112 145-112 73 0 125 47 132 112 4 39-26 70-69 70H181c-40 0-67-29-62-70Z" fill="#b87845"/>
+  <path d="M139 255c12-49 61-81 123-81 58 0 103 32 115 81-28 19-71 29-119 29-49 0-91-10-119-29Z" fill="#d69b5f"/>
+  <path d="M190 201c-18 18-26 37-28 58m77-75c-17 19-25 40-25 62m75-58c-14 19-19 39-17 60" fill="none" stroke="#f4d6a0" stroke-width="10" stroke-linecap="round"/>
+  <path d="M382 295c0-40 27-68 65-68 39 0 66 28 66 68v56H382v-56Z" fill="#fffaf4"/>
+  <path d="M394 298c0-30 21-51 53-51s54 21 54 51v12H394v-12Z" fill="#896049"/>
+  <path d="M513 285c29-3 39 13 35 34-3 17-19 27-40 21" fill="none" stroke="#fffaf4" stroke-width="13"/>
+  <ellipse cx="447" cy="352" rx="89" ry="14" fill="#d2b9a7"/>
+  <path d="M205 355c9-28 35-46 65-44 29 2 51 20 55 48-17 15-36 22-59 22-25 0-47-9-61-26Z" fill="#d99f62"/>
+  <path d="M230 355c10-12 24-17 39-17 14 0 28 5 38 17" fill="none" stroke="#f5d9a5" stroke-width="6" stroke-linecap="round"/>
+  <path d="M119 392h387" stroke="#b87845" stroke-width="3" opacity=".35"/>
+</svg>
